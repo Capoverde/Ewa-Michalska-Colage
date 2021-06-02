@@ -1,0 +1,42 @@
+
+/*
+                GALLERY
+
+=========================================*/
+
+.gallery__body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.466), rgba(0, 0, 0, 0.39)) ,url('/src/images/content/gallery-bg-2.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+}
+
+
+.gallery__container{
+    margin: 100px auto;
+
+
+    .img--box{
+        cursor:zoom-in;
+        padding: 4px;
+        background: $white;
+    }
+
+}
+
+
+.lb-caption{
+    top:-25%;
+    position: relative;
+    font-family: "Roboto Mono", monospace;
+    background: $black;
+    padding: 3px 10px 3px 6px;
+
+    letter-spacing: 3px;
+
+    &::after{
+        position: absolute;
+        content:"\00a9";
+        top:0;
+    }
+}

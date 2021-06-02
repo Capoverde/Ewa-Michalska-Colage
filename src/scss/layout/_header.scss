@@ -1,0 +1,185 @@
+/*
+                    HEADER
+================================================== */
+
+.header__main {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/src/images/content/gallery/g18.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+  position: relative;
+
+  @include respond-below(md){
+    // background-size: 98%;
+  }
+}
+
+.aside--left {
+  height: fit-content;
+  width: 40px;
+  // outline: 1px solid red;
+  position: absolute;
+  bottom: 5%;
+  left: 4%;
+
+  .socials__list {
+    display: flex;
+    .socials__items {
+      margin-left: 30px;
+
+      &:hover {
+        @include transition(all, 0.35s, ease-in-out);
+        @include translate(0, -10px);
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      .socials__link {
+        font-size: 2rem;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: attr(data-tool);
+          top: -250%;
+          left: -120%;
+          color: $white;
+          font-size: 1rem;
+          background: $black;
+          @include rotate(z, 90deg);
+          padding: 4px;
+          font-family: "Roboto Mono", monospace;
+          opacity: 0;
+        }
+
+        &:hover {
+          &::before {
+            top: -150%;
+            @include transition(all, 0.35s, ease-in-out);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    text-align: left;
+    font-size: 7rem;
+    margin-top: 20%;
+    font-family: "Great Vibes", cursive;
+    color: hsl(29, 88%, 62%);
+    @include text-shadow();
+
+    @include respond-below(md){
+      font-size: 5rem;
+    }
+  }
+
+  h2 {
+    color: $h2-c;
+    font-family: "Roboto Mono", monospace;
+    font-size: 3rem;
+
+    .header--letter {
+      width: 50px;
+      background: $h2-span-c;
+      display: inline-block;
+      margin: 0;
+      @include text-shadow();
+      @include drop-shadow();
+
+      &:nth-child(1) {
+        @include rotate(z, -20deg);
+      }
+
+      &:nth-child(2) {
+        @include rotate(z, 3deg);
+        // @include translate(0, -10px);
+        background: darken($h2-span-c, 10);
+      }
+
+      &:nth-child(3) {
+        @include rotate(z, -13deg);
+        // @include translate(0, 5px);
+        color: red;
+      }
+
+      &:nth-child(4) {
+        position: relative;
+
+        &::after {
+          content: "a";
+          position: absolute;
+          top: 20%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: transparent;
+        }
+      }
+
+      &:nth-child(5) {
+        // @include rotate(z, -13deg);
+        @include translate(0, -15px);
+        background: #000;
+        color: $white;
+      }
+
+      &:last-child {
+        @include rotate(z, 13deg);
+        // @include translate(0, -15px);
+      }
+    }
+  }
+
+  .cookies {
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 400px;
+    background-image: url("/src/images/content/cookies-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    overflow: hidden;
+    -webkit-box-shadow: -5px 0px 20px 6px rgba(0,0,0,0.8); 
+    box-shadow: -5px 0px 20px 6px rgba(0,0,0,0.8);
+  
+
+    @include respond-below(md){
+width:380px;
+top: 31%;
+
+    }
+
+    .text {
+      padding: 10px;
+      outline: 1px solid $black;
+      color: $black;
+      font-weight: bold;
+      font-family: "Roboto Mono", monospace;
+    }
+
+    .btn {
+      margin-top: 4px;
+    }
+  }
+}
+
+
+// .cookies--show{
+//   left:79%;
+//   @include transition(all,.35s);
+// }

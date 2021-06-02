@@ -1,0 +1,61 @@
+// @use '../abstracts/' as *;
+
+/*
+                    NAVBAR
+==================================================*/
+
+.navigation__body{
+  .menu-btn{
+    display:none;
+  }
+  
+}
+
+
+.navbar {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: $nav-bg-c;
+  background-image: url(/src/images/content/gallery/g9.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+
+  
+  .logo {
+    margin: 0 auto 0 2em;
+  }
+
+  &__list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__list--item{
+    font-size: 2rem;
+
+  }
+
+  &__link {
+    overflow: hidden;
+    color:$white;
+    background: #000;
+    font-family: 'Love Ya Like A Sister', cursive;
+    @include transition(all, 0.35s, ease-in-out);
+
+    &:hover {
+      color: $link-hvr-c;
+    }
+  }
+}
+
+.navbar__link--active {
+  color: $link-hvr-c;
+  background: #000;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
